@@ -27,7 +27,7 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     description = models.TextField(blank=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(blank=True)
 
     category = models.ForeignKey(
         Category, related_name="products", on_delete=models.CASCADE)

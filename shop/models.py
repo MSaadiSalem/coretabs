@@ -1,10 +1,11 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, max_length=256)
     slug = models.SlugField(unique=True, blank=True)
 
     class Meta:
@@ -26,7 +27,7 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     description = models.TextField(blank=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(blank=True)
 
     category = models.ForeignKey(
         Category, related_name="products", on_delete=models.CASCADE)
@@ -40,5 +41,5 @@ class Product(models.Model):
 
         super().save(*args, **kwargs)
 
-    def __str__(slef):
-        return self.name
+    def __str__(self):
+        return "{0} {1}".format(self.name, self.stock)

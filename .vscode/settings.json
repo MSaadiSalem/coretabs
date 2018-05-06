@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/home/me/Env/coretabs/bin/python",
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnSave": true,
+    "python.linting.pylintArgs": [
+        "--disable=E1101, C0111, C0103"
+    ]
+}

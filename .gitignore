@@ -1,5 +1,15 @@
 
-# Created by https://www.gitignore.io/api/emacs,python,django,pycharm
+# Created by https://www.gitignore.io/api/visualstudiocode,emacs,python,django,pycharm
+
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
 
 ### Django ###
 *.log
@@ -244,4 +254,4 @@ venv.bak/
 .mypy_cache/
 
 
-# End of https://www.gitignore.io/api/emacs,python,django,pycharm
+# End of https://www.gitignore.io/api/visualstudiocode,emacs,python,django,pycharm

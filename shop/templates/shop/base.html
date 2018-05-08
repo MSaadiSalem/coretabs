@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <title>{% block title %}Coretbas shop{% endblock title%}</title>
+</head>
+
+<body class="container-fluid bg-light">
+    <header class='shadow p-3 mb-5 bg-dark rounded text-uppercase'>
+        {% block header %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand" href="/">Coretabs Shop
+                    {% load static %}
+                    <img src="{% static "img/shop_icon.png" %}"  width="30" height="30" alt="shop-icon"/>
+                </a>    
+              </nav>
+        {% endblock header %}
+    </header>
+
+    <main id="content" class="container-fluid">
+        {% block main %}    
+            <div class="row">   
+                <aside class="col-3">
+                    {% block sidenav %}{% endblock sidenav %}
+                </aside>
+                <div class="col-9">
+                    {% block content %}{% endblock content %}
+                </div>
+            </div> 
+         {% endblock main%}
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script> 
+    {% load static %}
+    <script src="{% static "js/bootstrap.js" %}" " integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T
+        " crossorigin="anonymous "></script>
+</body>
+
+</html>

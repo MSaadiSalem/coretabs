@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %} {% block title %} {{ title }} Products {% endblock title %} {% block sidenav %}
+<nav class="nav flex-column">
+    <a class="nav-link" href="{% url 'shop:products_list' %}">All Products</a>
+    <ul>
+        <li>
+            <a class="text-right" href="{% url 'shop:products_by_category' %}">By categories</a>
+        </li>
+    </ul>
+    {% for category in categories %}
+    <a class="nav-link" href="{% url 'shop:products_list' category.slug %} ">{{ category.name }}</a>
+    {% endfor %}
+</nav>
+{% endblock sidenav %} {% block content %}
+<ul class="list-group ">
+    {% for product in products %}
+    <li class='list-group-item'>
+        <a href="{{ product.get_absolute_url }} ">{{ product.name }}</a>
+        <br> Price: {{ product.price }}
+        <br> Description: {{ product.description }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "shop/list.html" %} {% block content %} {% for category in categories %}
+<br>
+<h2>{{ category.name }}</h2>
+<ul class="list-group">
+    {% for product in products %} {% if category == product.category %}
+    <li class='list-group-item'>
+        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        <br> Price: {{ product.price }}
+        <br> Description: {{ product.description}}
+    </li>
+    {% endif %} {% endfor %}
+</ul>
+
+
+{% endfor %} {% endblock content %}

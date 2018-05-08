@@ -1,0 +1,10 @@
+{% extends "shop/list.html" %}
+{% block title %} Product Detail {% endblock title %}
+{% block content %}
+<h1>{{ product.name }}</h1>
+<ul>
+    <li>Price: {{ product.price }}</li>
+    <li>Available Quantity: {{ product.stock }}</li>
+    <li>Description: {{ product.description }}</li>
+</ul>
+{% endblock content %}

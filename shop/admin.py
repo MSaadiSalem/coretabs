@@ -19,11 +19,11 @@ class ProductAdmin(admin.ModelAdmin):
     actions = ['make_price_zero', 'discount_20']
 
     # Actions
-    def make_price_zero(self, request, queryset):
+    def make_price_zero(modeladmin, request, queryset):
         queryset.update(price=0)
     make_price_zero.short_description = "Make selected products free"
 
-    def discount_20(self, request, queryset):
+    def discount_20(modeladmin, request, queryset):
         for product in queryset:
             new_price = product.price * 80 / 100
             queryset.update(price=new_price)
